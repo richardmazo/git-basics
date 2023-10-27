@@ -1,0 +1,193 @@
+################################################## CURSO GIT ##################################################
+
+Git: Sistema
+GitHub: Sitio web
+
+--------------------------------------------------------------------------------------------------------------------
+git init                         						Empieza el repositorio
+--------------------------------------------------------------------------------------------------------------------
+git clone url 											Para clonarme un repositorio
+--------------------------------------------------------------------------------------------------------------------
+git add archivo.txt              						Se agrega archivo especifico al stagin
+--------------------------------------------------------------------------------------------------------------------
+git add .                        						Se agrega todo al stagin
+--------------------------------------------------------------------------------------------------------------------
+git rm --cached archivo.txt      						Devuelve del stagin area al equipo local
+--------------------------------------------------------------------------------------------------------------------
+git rm --force archivo.txt 								Elimina los archivos de git y del disco duro
+--------------------------------------------------------------------------------------------------------------------
+git reset --soft										Borramos todo el historial y los registros de git 
+														pero guardamos los cambios que tengamos en Staging, 
+														así podemos aplicar las últimas actualizaciones a un 
+														nuevo commit.
+--------------------------------------------------------------------------------------------------------------------
+git reset --hard										Borra todo, absolutamente todo. 
+														Toda la información de los commits y del área de staging 
+														se borra del historial.	
+--------------------------------------------------------------------------------------------------------------------
+git reset HEAD											Saca archivos del área de staging, para que los últimos 
+														cambios de estos archivos no se envíen al último commit, 
+														a menos que cambiemos de opinión y los incluyamos de nuevo 
+														en staging con git add, por supuesto.						
+--------------------------------------------------------------------------------------------------------------------														
+git commit -m "Comentario"       						Para hacer commit
+--------------------------------------------------------------------------------------------------------------------
+git status                       						Muestra el status
+--------------------------------------------------------------------------------------------------------------------
+git show arhivo.txt                						Muestra todos los cambios historicos realizados
+--------------------------------------------------------------------------------------------------------------------
+git log archivo.txt              						Muestra la historia de un archivo especifico
+--------------------------------------------------------------------------------------------------------------------
+git diff [indicador commit 1 que sale con git log] [indicador commit 2 que sale con git log] 
+														Muestra la diferencia entre dos commits
+--------------------------------------------------------------------------------------------------------------------
+git push                         						Lleva al repositorio
+--------------------------------------------------------------------------------------------------------------------
+git pull                         						Actualiza del repositorio y directorio de trabajo
+--------------------------------------------------------------------------------------------------------------------
+git config                       						Todos los comandos de git
+--------------------------------------------------------------------------------------------------------------------
+git config --list                						Configuraciones por defecto de git
+--------------------------------------------------------------------------------------------------------------------
+git config --list --show-origin  						Muestra donde están las configuraciones guardadas
+--------------------------------------------------------------------------------------------------------------------
+git config --global user.name "nme" 					Para cambiar el nombre del usuario
+--------------------------------------------------------------------------------------------------------------------
+git config --global user.email "nme@hotmail.com"  		Para cambiar el email del usuario
+--------------------------------------------------------------------------------------------------------------------
+git fetch												Me trae del repositorio remoto al repositorio local,
+														pero no me lo trae a mis archivos, para eso debo
+														combinar la ultima version de mi repo local con 
+														mi directorio de trabajo (git merge)
+--------------------------------------------------------------------------------------------------------------------
+git merge												Me combina lo que hay en mi repositorio local con
+														mi directorio de trabajo
+--------------------------------------------------------------------------------------------------------------------
+git pull												Fusiona el git merge y el git fetch														
+--------------------------------------------------------------------------------------------------------------------
+git branch cabecera										Crea una nueva rama
+--------------------------------------------------------------------------------------------------------------------
+git checkout cabecera                                   Para moverme de rama
+--------------------------------------------------------------------------------------------------------------------
+git merge cabecera 										Combino la rama donde estoy parado con la rama cebecera
+--------------------------------------------------------------------------------------------------------------------
+git commit -am "mensaje"                                Ya tiene el git add incluido
+--------------------------------------------------------------------------------------------------------------------
+git remote add origin [link_del_repo]					Agregar origen remoto de nuestros archivos
+--------------------------------------------------------------------------------------------------------------------
+git push origin master									 
+--------------------------------------------------------------------------------------------------------------------
+git remote -v 											Nos muestra la URL de nuestro repositorio,
+--------------------------------------------------------------------------------------------------------------------
+git log --all 											Nos muestra todo el historial de los cambios que hemos hecho
+--------------------------------------------------------------------------------------------------------------------
+git log --all --graph									Te muestra todo el historial y cómo ha funcionado las ramas
+--------------------------------------------------------------------------------------------------------------------
+git log --all --graph --decorate --online               Muestra toda los historia del proyecto de una manera más comprimida desde que arrancó
+--------------------------------------------------------------------------------------------------------------------
+alias arbolito="git log --all --graph --decorate --oneline" Le ponemos un alias a un comando, llamado arbolito
+--------------------------------------------------------------------------------------------------------------------
+git tag -a v0.1 -m "Resultado de las primeras clases del curso" 9235906       Creamos un tag    
+--------------------------------------------------------------------------------------------------------------------
+git tag 												Me muestra todos los tags
+--------------------------------------------------------------------------------------------------------------------
+git show-ref --tags										Me muestra todos los tags y a qué commit está asignado
+--------------------------------------------------------------------------------------------------------------------
+git push origin --tags									Para subir los tags
+--------------------------------------------------------------------------------------------------------------------
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+--------------------------------------------------------------------------------------------------------------------
+git tag -d ejemplo										Para eliminar un tag
+--------------------------------------------------------------------------------------------------------------------
+git push origin :refs/tags/ejemplo						Para eliminar un tag visual de la interfaz de git
+--------------------------------------------------------------------------------------------------------------------
+git show-branch											Nos muestra cuáles son las ramas que existen y cuál es su historia
+--------------------------------------------------------------------------------------------------------------------
+git show-branch --all									Nos muestra cuáles son las ramas que existen y cuál es su historia con más datos
+--------------------------------------------------------------------------------------------------------------------
+gitk													Te abre la historia de una manera más visual
+--------------------------------------------------------------------------------------------------------------------
+git push origin cabecera 								Para subir una rama que cree local
+--------------------------------------------------------------------------------------------------------------------
+git branch 												Consulto las ramas que tengo
+--------------------------------------------------------------------------------------------------------------------
+git branch -D Nombrerama 								Para eliminar una rama
+--------------------------------------------------------------------------------------------------------------------
+git config -l 											Para ver las configuraciones de git
+--------------------------------------------------------------------------------------------------------------------
+git log --stat 											Para ver el historial de cambios 
+--------------------------------------------------------------------------------------------------------------------
+git rebase main											Parado en mi rama de desarrollo, me trae todo lo de main, como si es checkout original lo hubiera hecho desde el ultimo commit de main, la rama de desarrollo ya no arranca un commit atras, si no que arranca un commit adelante trayendo lo de main y fucionandolo
+--------------------------------------------------------------------------------------------------------------------
+git checkout - 											Me devuelve a la ultima rama en la que estuve
+--------------------------------------------------------------------------------------------------------------------
+git stash												Guarda los cambios realizados en el local en un lugar temporal, y te pone en el head anterior, al ultimo commit
+--------------------------------------------------------------------------------------------------------------------
+git stash list											Sirve para ver los cambios que fueron guardados con git stash
+--------------------------------------------------------------------------------------------------------------------
+git stash pop											retomo los cambios que habían sido guardados con git stash
+--------------------------------------------------------------------------------------------------------------------
+git stash branch ramaNueva								Después de haber dado git stash, con el comando git stash branch ramaNueva mando lo que tengo en el stash a una rama nueva
+--------------------------------------------------------------------------------------------------------------------
+git stash drop											Elimina lo que tengo guardado con en el comando de git stash
+--------------------------------------------------------------------------------------------------------------------
+git clean --dry-run										Simula lo que se va borrar (todo lo nuevo con respecto al repo original )sin borrarlo				
+--------------------------------------------------------------------------------------------------------------------
+git clean -df											Borra los archivos que no hacen parte del directorio actual
+--------------------------------------------------------------------------------------------------------------------
+git log --online 										Nos muestra todo el log de manera compacta
+--------------------------------------------------------------------------------------------------------------------
+git cherry-pick [id_commit]								Me traigo un commit en especifico a mi rama
+--------------------------------------------------------------------------------------------------------------------
+git commit --amend										Significa remendar, y lo que hace es que lo commits que hice me los va pegar al commit anterior, Para hacer uso de ammend los archivos deben de estar en staging con git add archivo 
+--------------------------------------------------------------------------------------------------------------------
+git reflog												Es una especie de log mucho más detallado
+--------------------------------------------------------------------------------------------------------------------
+git reset --HARD										Resetea todo, 
+--------------------------------------------------------------------------------------------------------------------
+git reset --SOFT										Resetea pero mantiene lo que haya en Staging, en staging (lo que se le dio add), ejemplo: git reset HEAD@{4}, donde HEAD@{4} fue sacado de git reflog
+--------------------------------------------------------------------------------------------------------------------
+git branch ramaBorrada HEAD@{1}							Para recuperrar una rama borrada, donde HEAD@{1} sale de hacer git reflog
+--------------------------------------------------------------------------------------------------------------------
+git grep color											Busca en todo el repo la palabra color
+--------------------------------------------------------------------------------------------------------------------
+git grep -n color										Busca en todo el repo la palabra color y me dice en que linea está
+--------------------------------------------------------------------------------------------------------------------
+git grep -c "<p>"										Me dice el numero de veces que está una palabra
+--------------------------------------------------------------------------------------------------------------------
+git log -S "cabecera"									El numero de veces que utilice una palabra en un commit
+--------------------------------------------------------------------------------------------------------------------
+git shortlog											Muestra cuantos commits ha hecho cada persona, el detalle
+--------------------------------------------------------------------------------------------------------------------
+git shortlog -sn										Muestra cuantos commits ha hecho cada persona
+--------------------------------------------------------------------------------------------------------------------
+git shortlog -sn										Muestra cuantos commits ha hecho cada persona y también los que fueron borrados
+--------------------------------------------------------------------------------------------------------------------
+git shortlog -sn --all --no-merges						Muestra cuantos commits ha hecho cada persona sin merges
+--------------------------------------------------------------------------------------------------------------------
+git config --global alias.stats "shortlog -sn --all --no-merges"  Creo un nuevo comando global llamado git stats, el cual es un alias de shortlog -sn --all --no-merges
+--------------------------------------------------------------------------------------------------------------------
+git blame archivo										Me muestra quien hizo qué de un archivo en especifico
+--------------------------------------------------------------------------------------------------------------------
+git blame -c archivo									Me muestra quien hizo qué de un archivo en especifico, más detallado
+--------------------------------------------------------------------------------------------------------------------
+git blame --help										Me muestra ayuda sobre el comando --help
+--------------------------------------------------------------------------------------------------------------------
+git blame archivo -L35,53								Me muestra quien edito un archivo de x a y linea
+--------------------------------------------------------------------------------------------------------------------
+git blame archivo -L35,53 -c							Me muestra quien edito un archivo de x a y linea, le agregamos más formato
+--------------------------------------------------------------------------------------------------------------------
+git branch -r 											Me muestra las ramas remotas, en GitHub
+--------------------------------------------------------------------------------------------------------------------
+git branch -a 											Me muestra todas las ramas
+--------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------- 
+
+						GIT IGNORE:
+						*.jpg
+.*                                                      Ignora todos los archivos jpg
+						
+
+
+
